@@ -29,7 +29,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # OPEN CHROMIUM
 bindsym $mod+o exec chromium
 # START LUAKIT
-bindsym $mod+p exec --no-startup-id luakit
+bindsym $mod+p exec --no-startup-id dwb
 # VOLUME UP
 bindsym XF86AudioRaiseVolume exec amixer -qM set Master 2%+ unmute
 # VOLUME DOWN
