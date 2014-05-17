@@ -1,0 +1,28 @@
+// Replace tab with super
+//partial modifier_keys
+//xkb_symbols "super" {
+//    replace key <TAB> { [ Super_L, Super_L ] };
+//    modifier_map  Mod4 { <TAB> };
+//};
+
+// This changes the <TAB> key to become a Mod4 modifier,
+// but it will still produce the Tab keysym.
+//partial hidden modifier_keys
+//xkb_symbols "super" {
+//    replace key <TAB> {
+//        type[Group1] = "ONE_LEVEL",
+//        symbols[Group1] = [ Tab ],
+//        actions[Group1] = [ SetMods(modifiers=Mod4) ]
+//    };
+//    modifier_map Mod4 { <TAB> };
+//};
+
+xkb_symbols "super" {
+    replace key <RWIN> { [ Tab, Tab ] };
+    replace key <TAB> {
+        type[Group1] = "ONE_LEVEL",
+        symbols[Group1] = [ Super_L ],
+        actions[Group1] = [ SetMods(modifiers=Mod4) ]
+    };
+    modifier_map Mod4 { <TAB> };
+};

@@ -1,0 +1,27 @@
+# Play sound through USB adapter if plugged in
+
+options=$(aplay -l | grep card | sed 's/card....//' | sed 's/device....//' | wc -l)
+
+echo "Choose an option number:"
+for (( i=1; i<=$options; i++ ))
+do
+	option=$(aplay -l | grep card | sed 's/card....//' | sed 's/device....//' | awk "NR == $i")
+	echo $i')' $option
+done
+
+read -p 'Option: ' choice
+
+if [ $choice -gt $options ] || [ $choice -lt 1 ]
+	then 
+		echo 'Invalid option number, try again'
+		exit 1
+fi
+
+card=$(aplay -l | grep card | sed 's/^card \([0-9]\).*/\1/' | awk "NR == $choice")
+device=$(aplay -l | grep card | sed 's/.*device \([0-9]\).*/\1/' | awk "NR == $choice")
+
+#sed "s/card .*/card $card/" ~/.asoundrc > /tmp/.asoundrc
+#sed "s/device .*/device $device/" /tmp/.asoundrc > ~/.asoundrc
+#rm /tmp/.asoundrc
+
+echo -e "defaults.pcm.card $card\ndefaults.pcm.device $device\ndefaults.ctl.card $card" > ~/.asoundrc
