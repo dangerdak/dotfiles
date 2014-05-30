@@ -8,7 +8,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 
 " My Bundles
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'pyflakes.vim'
 Plugin 'mileszs/ack.vim'
@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 "Plugin 'majutsushi/tagbar'
 Plugin 'gorodinskiy/coloresque'
+Plugin 'mattn/emmet-vim'
 
 filetype plugin indent on
 
@@ -30,6 +31,7 @@ set wildmenu
 set number
 set undofile
 set mouse=a 
+set cursorline
 
 "Syntastic checkers
 "let g:syntastic_aggregate_errors = 1
