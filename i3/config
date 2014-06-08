@@ -26,6 +26,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# OPEN FIREFOX
+bindsym $mod+i exec firefox
 # OPEN CHROMIUM
 bindsym $mod+o exec chromium
 # START LUAKIT

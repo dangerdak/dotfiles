@@ -63,6 +63,9 @@ status.register("wireless",
 status.register("disk",
 	path="/",
 	format="💿 {avail:.0f}G",
+        color=color_standard,
+        critical_limit=20,
+        critical_color=color_attention,
 	)
 
 # Volume info
