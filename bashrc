@@ -26,3 +26,8 @@ alias grep='grep --color=auto'
 
 # Add git completion
 source ~/.git-completion.sh
+
+# Virtual envs
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/github
+source /usr/bin/virtualenvwrapper
