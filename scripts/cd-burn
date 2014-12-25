@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
+perl-rename -n 's/ /_/g' *.mp3
+perl-rename -n 's/_-_/-/g' *.mp3
+perl-rename 's/ /_/g' *.mp3
+perl-rename 's/_-_/-/g' *.mp3
 for f in *; do ffmpeg -i $f -acodec pcm_s16le -ar 44100 -ac 2 ${f%.*}.wav; done
-perl-rename -n 's/ /_/g' *.wav
-perl-rename -n 's/_-_/-/g' *.wav
 normalize -b -v *.wav
 cdrecord -v -eject dev='/dev/sr0' -audio -pad *.wav
 rm -v *.wav
