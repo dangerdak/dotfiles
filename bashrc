@@ -27,17 +27,7 @@ fi
 export GREP_COLOR='1;31'
 alias grep='grep --color=auto'
 
-# Add git completion
-source ~/.git-completion.sh
-
 # Keep screen on
 alias watchonline='xset s off; xset -dpms'
 alias nowatchonline='xset s 600 600; xset +dpms'
 
-# Virtual envs
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-
-# Apuniverse aliases
-alias cdapu='cd /home/dangerdak/projects/apuniverse/apuniverse; workon anniepottersuniverse;'
-alias cdapu-runserver='cd /home/dangerdak/projects/apuniverse/apuniverse; workon anniepottersuniverse; ./manage.py runserver --settings=apuniverse.settings.local;'
