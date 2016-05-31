@@ -1,8 +1,6 @@
 # coding: utf-8
 
 from i3pystatus import Status
-#from i3pystatus.mail import imap
-#from password import password
 
 status = Status(standalone=True)
 
@@ -17,18 +15,8 @@ status.register("clock",
                 format="%a %d %b %H:%M:%S",
                 )
 
-# CPU temperature (for Intel CPUs only)
-# status.register("temp",
-#                 format="{temp:.0f}°C",
-#                 high_factor=0.7,
-#                 color=color_standard,
-#                 color_critical=color_urgent,
-#                 )
-
-
 # Battery
 status.register("battery",
-                battery_ident="BAT1",
                 format="{status} {percentage:.0f}% {remaining:%E%hh:%Mm}",
                 color=color_standard,
                 full_color=color_standard,
@@ -63,7 +51,7 @@ status.register("network",
 # Shows disk use of directory at path
 status.register("disk",
                 path="/",
-                format="💿 {avail:.0f}G",
+                format="{avail:.0f}G",
                 color=color_standard,
                 critical_limit=3,
                 critical_color=color_attention,
@@ -71,23 +59,9 @@ status.register("disk",
 
 # Volume info
 status.register("alsa",
-                format="🔊 {volume}%",
+                format="Vol: {volume}%",
                 color=color_standard,
                 color_muted=color_attention,
                 )
 	
-## Mail info
-#mail= imap.IMAP(host="imap.gmail.com",
-#		username="me.scott",
-#		password=password(),
-#		)
-#
-#status.register("mail",
-#		backends=[mail],
-#		format="📨",
-#		format_plural="📨",
-#		hide_if_null=False,
-#		color=color_standard,
-#		color_unread=color_attention,
-#		) 
 status.run()
