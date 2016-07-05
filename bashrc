@@ -31,3 +31,5 @@ alias grep='grep --color=auto'
 alias watchonline='xset s off; xset -dpms'
 alias nowatchonline='xset s 600 600; xset +dpms'
 
+alias reboot='systemctl reboot'
+alias poweroff='systemctl poweroff'
