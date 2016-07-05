@@ -1,23 +1,25 @@
-set nocompatible
-filetype off
+set nocompatible	" be iMproved, required for vundle
+filetype off		" required for Vundle
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles
 "Plugin 'ervandew/supertab'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'pyflakes.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'	"Syntax checking
+Plugin 'mileszs/ack.vim'	"Allows you to run Ack from Vim
+Plugin 'tpope/vim-surround'	"Quoting/parenthesizing
+Plugin 'tpope/vim-fugitive'	"Git wrapper
 "Plugin 'majutsushi/tagbar'
-Plugin 'gorodinskiy/coloresque'
-Plugin 'mattn/emmet-vim'
+Plugin 'gorodinskiy/coloresque'	"CSS colour previewing
+"Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
+
+" All plugins must be added before following line
+call vundle#end()
 
 filetype plugin indent on
 
@@ -26,12 +28,12 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-set autoindent
-set wildmenu
-set number
-set undofile
-set mouse=a 
-set cursorline
+set autoindent	"New line indentation same as previous
+set wildmenu	"Command line completion
+set number	"Display line numbers
+set undofile	"Persistent undo
+set mouse=a 	"Enable mouse in all modes
+set cursorline	"Highlight current line
 
 "Syntastic checkers
 "let g:syntastic_aggregate_errors = 1
@@ -43,6 +45,7 @@ let g:syntastic_css_checkers=['csslint', 'prettycss']
 "Toggle tagbar
 "nmap <F1> :TagbarToggle<CR> 
 
+"Disable arrow keys
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -52,4 +55,4 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
-nnoremap <F5> :!python %<CR>
+nnoremap <F5> :!python %<CR>	"Run current python file
