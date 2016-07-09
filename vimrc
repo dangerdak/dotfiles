@@ -55,4 +55,17 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
+"Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-J>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"More natural split opening
+set splitbelow
+set splitright
+
 nnoremap <F5> :!python %<CR>	"Run current python file
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+set colorcolumn=80
