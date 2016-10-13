@@ -34,6 +34,8 @@ set number	"Display line numbers
 set undofile	"Persistent undo
 set mouse=a 	"Enable mouse in all modes
 set cursorline	"Highlight current line
+set ruler	"Display cursor position
+set showcmd	"Display incomplete command
 
 "Syntastic checkers
 "let g:syntastic_aggregate_errors = 1
