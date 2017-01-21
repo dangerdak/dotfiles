@@ -69,5 +69,7 @@ set splitright
 
 nnoremap <F5> :!python %<CR>	"Run current python file
 
+set expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 set colorcolumn=80
