@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'	"Git wrapper
 "Plugin 'majutsushi/tagbar'
 Plugin 'gorodinskiy/coloresque'	"CSS colour previewing
 "Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
+Plugin 'wookiehangover/jshint.vim' "JS syntax hceking
 
 " All plugins must be added before following line
 call vundle#end()
