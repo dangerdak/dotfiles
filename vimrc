@@ -71,6 +71,10 @@ set splitright
 "Run current python file
 nnoremap <F5> :!python %<CR>
 
+"Edit vimrc
+let mapleader = ","
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 set expandtab
 autocmd FileType Btml setlocal shiftwidth=2 tabstop=2
