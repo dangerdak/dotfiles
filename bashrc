@@ -33,3 +33,7 @@ alias nowatchonline='xset s 600 600; xset +dpms'
 
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
+
+# Automatically source nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
