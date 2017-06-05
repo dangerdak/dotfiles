@@ -71,12 +71,19 @@ set splitright
 "Run current python file
 nnoremap <F5> :!python %<CR>
 
-"Edit vimrc
 let mapleader = ","
+"Open current file in browser
+function! Browser()
+        :silent !chromium %
+        :redraw!
+endfunction
+nnoremap <leader>o :call Browser()<CR>
+
+"Edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 set expandtab
-autocmd FileType Btml setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 set colorcolumn=80
