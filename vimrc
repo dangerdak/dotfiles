@@ -1,4 +1,4 @@
-set nocompatible	" be iMproved, required for vundle
+set nocompatible	" don't need vi compatibility, required for vundle
 filetype off		" required for Vundle
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -8,16 +8,23 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles
-"Plugin 'ervandew/supertab'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'	"Syntax checking
-Plugin 'mileszs/ack.vim'	"Allows you to run Ack from Vim
 Plugin 'tpope/vim-surround'	"Quoting/parenthesizing
 Plugin 'tpope/vim-fugitive'	"Git wrapper
+Plugin 'ap/vim-css-color'       "CSS color previewing
+"Cant get youcompleteme to work - have to press escape twice in insert mode
+"And shows user defined completion pattern not found error
+"May be incompatible with fugitive
+"Plugin 'Valloric/YouCompleteMe' "Code-completion
+
+"Plugin 'mileszs/ack.vim'	"Allows you to run Ack from Vim
+"Plugin 'ervandew/supertab'
 "Plugin 'majutsushi/tagbar'
-Plugin 'gorodinskiy/coloresque'	"CSS colour previewing
 "Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
-Plugin 'wookiehangover/jshint.vim' "JS syntax hceking
+"Plugin 'wookiehangover/jshint.vim' "JS syntax hceking
+"Plugin 'w0rp/ale' "Asynchronous linting
+"Plugin 'KabbAmine/vCoolor.vim' "Color picker
 
 " All plugins must be added before following line
 call vundle#end()
@@ -30,13 +37,17 @@ set background=dark
 colorscheme solarized
 
 set autoindent	"New line indentation same as previous
-set wildmenu	"Command line completion
-set number	"Display line numbers
-set undofile	"Persistent undo
-set mouse=a 	"Enable mouse in all modes
 set cursorline	"Highlight current line
+set encoding=utf-8  "Recommended by vim docs
+set mouse=a 	"Enable mouse in all modes
+set number	"Display line numbers
 set ruler	"Display cursor position
+set scrolloff=2 "Number of context lines above and below cursor when scrolling
 set showcmd	"Display incomplete command
+set undofile	"Persistent undo
+set wildmenu	"Command line completion
+
+let g:vcoolor_custom_picker = 'zenity --color-selection --show-palette --color '
 
 "Syntastic checkers
 "let g:syntastic_aggregate_errors = 1
@@ -83,7 +94,13 @@ nnoremap <leader>o :call Browser()<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-set expandtab
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+set expandtab   "Expand tabs into spaces
+"Default indentation
+set tabstop=4   "Width inserted by tab key
+set shiftwidth=4        "Indent inserted/removed by carets in normal mode
+set softtabstop=4       "Indentation removed by backspace
+
+"Filetype-specific indentation
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 set colorcolumn=80
