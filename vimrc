@@ -13,6 +13,7 @@ Plugin 'scrooloose/syntastic'	"Syntax checking
 Plugin 'tpope/vim-surround'	"Quoting/parenthesizing
 Plugin 'tpope/vim-fugitive'	"Git wrapper
 Plugin 'ap/vim-css-color'       "CSS color previewing
+"Plugin 'w0rp/ale' "Asynchronous linting
 "Cant get youcompleteme to work - have to press escape twice in insert mode
 "And shows user defined completion pattern not found error
 "May be incompatible with fugitive
@@ -23,7 +24,6 @@ Plugin 'ap/vim-css-color'       "CSS color previewing
 "Plugin 'majutsushi/tagbar'
 "Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
 "Plugin 'wookiehangover/jshint.vim' "JS syntax hceking
-"Plugin 'w0rp/ale' "Asynchronous linting
 "Plugin 'KabbAmine/vCoolor.vim' "Color picker
 
 " All plugins must be added before following line
@@ -55,6 +55,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol= '>>'
 let g:syntastic_warning_symbol = '!!'
 let g:syntastic_css_checkers=['csslint', 'prettycss']
+let g:syntastic_javascript_checkers=['eslint']
+
+"Recommended settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "Toggle tagbar
 "nmap <F1> :TagbarToggle<CR> 
