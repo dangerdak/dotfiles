@@ -50,18 +50,22 @@ set wildmenu	"Command line completion
 let g:vcoolor_custom_picker = 'zenity --color-selection --show-palette --color '
 
 "Syntastic checkers
-"let g:syntastic_aggregate_errors = 1
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 let g:syntastic_error_symbol= '>>'
 let g:syntastic_warning_symbol = '!!'
+let g:syntastic_styel_warning_symbol = 'S!'
 let g:syntastic_css_checkers=['csslint', 'prettycss']
 let g:syntastic_javascript_checkers=['eslint']
 
 "Recommended settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+
 
 "Toggle tagbar
 "nmap <F1> :TagbarToggle<CR> 
