@@ -51,7 +51,7 @@ let g:vcoolor_custom_picker = 'zenity --color-selection --show-palette --color '
 
 "Syntastic checkers
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_error_symbol= '>>'
