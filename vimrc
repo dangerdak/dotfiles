@@ -66,12 +66,31 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 
-
 "Toggle tagbar
 "nmap <F1> :TagbarToggle<CR> 
 
+"Make searches case insensitive unless they contain some uppercase characters
+set ignorecase
+set smartcase
+
+set gdefault "Apply substitutions globally on lines by default
+let mapleader = ","
+
+"Highlight search results as you type
+set incsearch
+set hlsearch
+nnoremap <leader><space> :let @/ = ""<CR>
+
+"Tab matches bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+"Use perl compatible regexes
+nnoremap / /\v
+vnoremap / /\v
+
 "Disable arrow keys
-inoremap <up> <nop>
+noremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
@@ -93,7 +112,6 @@ set splitright
 "Run current python file
 nnoremap <F5> :!python %<CR>
 
-let mapleader = ","
 "Open current file in browser
 function! Browser()
         :silent !chromium %
@@ -101,9 +119,21 @@ function! Browser()
 endfunction
 nnoremap <leader>o :call Browser()<CR>
 
+"Re-hardwrap paragraph
+nnoremap <leader>q gqip
+"Re-select pasted text
+nnoremap <leader>v V`]
+"Fold tag - for html
+nnoremap <leader>ft Vatzf
+
 "Edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+nnoremap ; :
+
+"Save on losing focus
+au FocusLost * :wa
 
 set expandtab   "Expand tabs into spaces
 "Default indentation
@@ -114,4 +144,10 @@ set softtabstop=4       "Indentation removed by backspace
 "Filetype-specific indentation
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+"Line wrapping. See help fo-table
+set linebreak
+set textwidth=79
+set formatoptions=qrn1
+
 set colorcolumn=80
