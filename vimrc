@@ -13,6 +13,7 @@ Plugin 'scrooloose/syntastic'	"Syntax checking
 Plugin 'tpope/vim-surround'	"Quoting/parenthesizing
 Plugin 'tpope/vim-fugitive'	"Git wrapper
 Plugin 'ap/vim-css-color'       "CSS color previewing
+Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
 "Plugin 'w0rp/ale' "Asynchronous linting
 "Cant get youcompleteme to work - have to press escape twice in insert mode
 "And shows user defined completion pattern not found error
@@ -22,7 +23,6 @@ Plugin 'ap/vim-css-color'       "CSS color previewing
 "Plugin 'mileszs/ack.vim'	"Allows you to run Ack from Vim
 "Plugin 'ervandew/supertab'
 "Plugin 'majutsushi/tagbar'
-"Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
 "Plugin 'wookiehangover/jshint.vim' "JS syntax hceking
 "Plugin 'KabbAmine/vCoolor.vim' "Color picker
 
