@@ -27,10 +27,6 @@ fi
 export GREP_COLOR='1;31'
 alias grep='grep --color=auto'
 
-# Keep screen on
-alias watchonline='xset s off; xset -dpms'
-alias nowatchonline='xset s 600 600; xset +dpms'
-
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
 
