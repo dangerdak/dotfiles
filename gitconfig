@@ -1,0 +1,11 @@
+[user]
+	name = Dakshina Scott
+	email = dakshina.scott@gmail.com
+[core]
+	excludesfile = /home/dangerdak/.gitignore
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    lg = log --pretty=format:\"%C(auto)%h%Creset %s%d %Cgreen(%ar)%Creset %C(dim cyan)[%an]%Creset\" --graph

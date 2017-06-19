@@ -30,6 +30,14 @@ alias grep='grep --color=auto'
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
 
+# Git aliases
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout'
+
 # Automatically source nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
