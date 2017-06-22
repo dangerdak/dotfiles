@@ -49,6 +49,14 @@ set wildmenu	"Command line completion
 
 let g:vcoolor_custom_picker = 'zenity --color-selection --show-palette --color '
 
+"Statusline settings
+set laststatus=2
+set statusline=%f   "Path to the file
+set statusline+=%=  "Move to rhs
+set statusline+=%l  "Current line
+set statusline+=/   "Separator
+set statusline+=%L  "Total lines
+
 "Syntastic checkers
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open = 0
