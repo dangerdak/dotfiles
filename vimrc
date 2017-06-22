@@ -14,6 +14,8 @@ Plugin 'tpope/vim-surround'	"Quoting/parenthesizing
 Plugin 'tpope/vim-fugitive'	"Git wrapper
 Plugin 'ap/vim-css-color'       "CSS color previewing
 Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
+Plugin 'scrooloose/nerdcommenter' "Comment toggling
+
 "Plugin 'w0rp/ale' "Asynchronous linting
 "Cant get youcompleteme to work - have to press escape twice in insert mode
 "And shows user defined completion pattern not found error
