@@ -148,8 +148,8 @@ nnoremap ; :
 "Save on losing focus
 au FocusLost * :wa
 
-set expandtab   "Expand tabs into spaces
 "Default indentation
+set expandtab   "Expand tabs into spaces
 set tabstop=4   "Width inserted by tab key
 set shiftwidth=4        "Indent inserted/removed by carets in normal mode
 set softtabstop=4       "Indentation removed by backspace
@@ -161,6 +161,6 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 "Line wrapping. See help fo-table
 set linebreak
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=cqn1
 
 set colorcolumn=80
