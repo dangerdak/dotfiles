@@ -91,6 +91,9 @@ set incsearch
 set hlsearch
 nnoremap <leader><space> :let @/ = ""<CR>
 
+"Fix indentation and return to previous location
+nnoremap <leader>= mzgg=G`z
+
 "Tab matches bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
