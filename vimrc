@@ -15,6 +15,9 @@ Plugin 'tpope/vim-fugitive'	"Git wrapper
 Plugin 'ap/vim-css-color'       "CSS color previewing
 Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
 Plugin 'scrooloose/nerdcommenter' "Comment toggling
+Plugin 'scrooloose/nerdtree' "Tree explorer
+Plugin 'pangloss/vim-javascript' "Improved JS indentation and syntax highlighting
+Plugin 'rstacruz/vim-closer' "Auto close brackets - ONLY on <CR>
 
 "Plugin 'w0rp/ale' "Asynchronous linting
 "Cant get youcompleteme to work - have to press escape twice in insert mode
@@ -74,6 +77,9 @@ let g:syntastic_javascript_checkers=['eslint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+"Nerdtree settings
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 
 "Toggle tagbar
