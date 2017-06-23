@@ -100,6 +100,9 @@ nnoremap <leader><space> :let @/ = ""<CR>
 "Fix indentation and return to previous location
 nnoremap <leader>= mzgg=G`z
 
+"Open auto-complete menu
+inoremap <leader>x <C-x><C-o>
+
 "Tab matches bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
