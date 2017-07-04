@@ -148,6 +148,9 @@ nnoremap <leader>v V`]
 "Fold tag - for html
 nnoremap <leader>ft Vatzf
 
+"Expand Emmet abbrs
+let g:user_emmet_leader_key=','
+
 "Edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
