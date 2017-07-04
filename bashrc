@@ -38,6 +38,11 @@ alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout'
 
+# Virtualenvwrapper settings
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
+source /usr/bin/virtualenvwrapper.sh
+
 # Automatically source nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
