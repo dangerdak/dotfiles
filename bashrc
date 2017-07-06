@@ -43,6 +43,11 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
 source /usr/bin/virtualenvwrapper.sh
 
+# Add git repo info to prompt
+source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+PS1='[\u@\h \W$(__git_ps1 "\e[38;5;37m (%s)\e[0m")]\$ '
+
 # Automatically source nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
