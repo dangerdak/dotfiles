@@ -5,7 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 ## MY ADDITIONS
@@ -31,12 +30,33 @@ alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
 
 # Git aliases
+alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout'
+alias gl='git log -5'
+
+# More aliases
+alias v='vim'
+alias _='sudo'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias pu='pushd'
+alias po='popd'
+
+alias ls='ls --color=auto'
+alias l='ls'
+alias ll='ls -l'
+alias lh='ls -lh'
+alias la='ls -la'
+alias lah='ls -lah'
+
+alias cl='clear'
 
 # Virtualenvwrapper settings
 export WORKON_HOME=$HOME/.virtualenvs
