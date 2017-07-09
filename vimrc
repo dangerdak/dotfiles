@@ -45,7 +45,6 @@ set autoindent	"New line indentation same as previous
 set cursorline	"Highlight current line
 set encoding=utf-8  "Recommended by vim docs
 set mouse=a 	"Enable mouse in all modes
-set number	"Display line numbers
 set ruler	"Display cursor position
 set scrolloff=2 "Number of context lines above and below cursor when scrolling
 set showcmd	"Display incomplete command
@@ -147,6 +146,12 @@ nnoremap <leader>q gqip
 nnoremap <leader>v V`]
 "Fold tag - for html
 nnoremap <leader>ft Vatzf
+
+"Line numbering
+set number	"Display line numbers
+set relativenumber "Display relative line numbers
+"Toggle relative line numbering
+nnoremap <leader>r :set relativenumber!<esc>
 
 "Expand Emmet abbrs
 let g:user_emmet_leader_key=','
