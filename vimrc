@@ -12,12 +12,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'	"Syntax checking
 Plugin 'tpope/vim-surround'	"Quoting/parenthesizing
 Plugin 'tpope/vim-fugitive'	"Git wrapper
+Plugin 'tpope/vim-unimpaired' "Aliases and mappings...
 Plugin 'ap/vim-css-color'       "CSS color previewing
 Plugin 'mattn/emmet-vim'	"Support for expanding abbreviations
 Plugin 'scrooloose/nerdcommenter' "Comment toggling
 Plugin 'scrooloose/nerdtree' "Tree explorer
 Plugin 'pangloss/vim-javascript' "Improved JS indentation and syntax highlighting
 Plugin 'rstacruz/vim-closer' "Auto close brackets - ONLY on <CR>
+Plugin 'mustache/vim-mustache-handlebars' "Syntax highlighting etc for handlebars
+Plugin 'elmcast/elm-vim'
 
 "Plugin 'w0rp/ale' "Asynchronous linting
 "Cant get youcompleteme to work - have to press escape twice in insert mode
@@ -40,6 +43,16 @@ filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
+
+"Eslint - so syntastic can find locally installed eslint
+"See https://github.com/eslint/eslint/issues/1238#issuecomment-139471958
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+    let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+    let g:syntastic_javascript_eslint_exec = local_eslint
+endif
 
 set autoindent	"New line indentation same as previous
 set cursorline	"Highlight current line
@@ -71,6 +84,11 @@ let g:syntastic_warning_symbol = '!!'
 let g:syntastic_styel_warning_symbol = 'S!'
 let g:syntastic_css_checkers=['csslint', 'prettycss']
 let g:syntastic_javascript_checkers=['eslint']
+
+"Recommended for elm
+let g:elm_syntastic_show_warnings = 1
+let g:elm_format_autosave = 1
+let g:syntastic_elm_checkers = ['elm_make']
 
 "Recommended settings
 set statusline+=%#warningmsg#
