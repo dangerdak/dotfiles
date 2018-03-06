@@ -34,9 +34,9 @@ alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
-alias gc='git commit'
+alias gcm='git commit'
 alias gd='git diff'
-alias go='git checkout'
+alias gco='git checkout'
 alias gl='git log -5'
 
 # More aliases
@@ -57,6 +57,11 @@ alias la='ls -la'
 alias lah='ls -lah'
 
 alias cl='clear'
+
+alias tree='tree -I node_modules'
+alias golight='xrdb $HOME/.Xresources-light'
+
+alias vga-above='xrandr --output LVDS1 --auto --output VGA1 --auto --above LVDS1'
 
 # Virtualenvwrapper settings
 export WORKON_HOME=$HOME/.virtualenvs
